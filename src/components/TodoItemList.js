@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import TodoItem from './TodoItem';
 
 class TodoItemList extends Component {
-  constructor(props) {
-      super(props);
-  }
-
   render() {
     return(
-      <div>TodoItemList</div>
+      <div>
+        <TodoItem />
+        <TodoItem />
+        <TodoItem />
+      </div>
     );
   }
 }
