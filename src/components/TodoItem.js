@@ -1,10 +1,13 @@
 import React from 'react';
 import './TodoItem.css';
 
-const TodoItem = ({ id, text, checked, onToggle }) => {
+const TodoItem = ({ id, text, checked, onToggle, onRemove }) => {
   return (
     <div className="todoItem" onClick={() => {onToggle(id)}}>
-      <div className="remove">&times;</div>
+      <div className="remove" onClick={(e) => {
+          e.stopPropagation(); // onToggle 이 실행되지 않도록 함
+          onRemove(id)}
+        }>&times;</div>
 
       <div className={`todo-text ${checked? 'checked' : ''}`}>{text}</div>
 
