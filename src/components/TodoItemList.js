@@ -6,12 +6,10 @@ class TodoItemList extends Component {
     const { todos } = this.props;
 
     const todoItemList = todos.map(
-      ({ id, text, checked }) => (
+      (todo) => (
         <TodoItem
-          id={id}
-          text={text}
-          checked={checked}
-          key={id}
+          {...todo}
+          key={todo.id}
         />
       )
     );
