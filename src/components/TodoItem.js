@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import './TodoItem.css';
 
 class TodoItem extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.props.checked !== nextProps.checked;
+  }
+
   render() {
     const { id, text, checked, onToggle, onRemove } = this.props;
-
+    
     return (
       <div className="todoItem" onClick={() => {onToggle(id)}}>
         <div className="remove" onClick={(e) => {
