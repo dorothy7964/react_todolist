@@ -1,11 +1,18 @@
 import React from 'react';
 import './Form.css';
 
-const Form = (props) => {
+const Form = ({ value, onChange, onCreate, onKeyPress }) => {
   return (
     <div className="form">
-      <input />
-      <div className="create-button">추가</div>
+      <input
+        value={value}
+        onChange={onChange}
+        onKeyPress={onKeyPress}
+      />
+
+    <div className="create-button" onClick={onCreate}>
+        추가
+      </div>
     </div>
   )
 }

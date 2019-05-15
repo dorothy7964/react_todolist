@@ -15,14 +15,49 @@ class App extends Component {
     ]
   }
 
+  handleChange = (e) => {
+    this.setState({
+      input : e.target.value
+    });
+  }
+
+  handleCreate = () => {
+    const { input,todos } = this.state;
+    this.setState({
+      input : '',
+      todos : todos.concat({
+        id : this.id++,
+        text : input,
+        checked : false
+      })
+    });
+  }
+
+  handleKeyPress = (e) => {
+    if(e.key === 'Enter'){
+      this.handleCreate();
+    }
+  }
+
   render() {
-    const { todos } = this.state;
+    const { input, todos } = this.state;
+
+    const {
+      handleChange,
+      handleCreate,
+      handleKeyPress,
+    } = this;
 
     return(
       <TodoListTemplate form={(
-          <Form />
-
+          <Form
+            value={input}
+            onChange={handleChange}
+            onCreate={handleCreate}
+            onKeyPress={handleKeyPress}
+          />
       )}>
+
         <TodoItemList
           todos={todos}
          />
