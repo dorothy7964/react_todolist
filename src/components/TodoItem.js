@@ -1,14 +1,16 @@
 import React from 'react';
 import './TodoItem.css';
 
-const TodoItem = (props) => {
+const TodoItem = ({ id, text, checked }) => {
   return (
     <div className="todoItem">
       <div className="remove">&times;</div>
 
-      <div className="todo-text checked">글</div>
+      <div className={`todo-text ${checked? 'checked' : ""}`}>{text}</div>
 
-      <div className="check-mark">&#x2713;</div>
+      {
+        checked && <div className="check-mark">&#x2713;</div>
+      }
     </div>
   )
 }
