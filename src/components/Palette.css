@@ -4,7 +4,19 @@
 }
 
 .color {
+  width: 3rem;
+  height: 3rem;
+  opacity: 0.5;
+  transition: all 0.2s;
+  cursor: pointer;
+}
 
+.color:hover {
+  opacity: 0.75;
+}
+
+.color.active, .color:active {
+  opacity: 1;
 }
 
 .color + .color {

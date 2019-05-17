@@ -63,10 +63,16 @@ class App extends Component {
     });
   }
 
-  handleRemove = (id) =>{
+  handleRemove = (id) => {
     const { todos } = this.state;
     this.setState({
       todos : todos.filter( (todo) => todo.id !== id )
+    });
+  }
+
+  handleSelectColor = (color) => {
+    this.setState({
+      color
     });
   }
 
@@ -78,7 +84,8 @@ class App extends Component {
       handleCreate,
       handleKeyPress,
       handleToggle,
-      handleRemove
+      handleRemove,
+      handleSelectColor
     } = this;
 
     return(
@@ -87,6 +94,7 @@ class App extends Component {
           <Palette
             colors={colors}
             selected={color}
+            onSelect={handleSelectColor}
           />
         )}
 
