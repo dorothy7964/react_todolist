@@ -13,9 +13,9 @@ class App extends Component {
     input : '',
     color : '#343a40',
     todos: [
-      { id: 0, text: ' 리액트 소개1', checked: false },
-      { id: 1, text: ' 리액트 소개2', checked: true },
-      { id: 2, text: ' 리액트 소개3', checked: false }
+      { id: 0, text: ' 리액트 소개1', checked: false, color : '#343a40' },
+      { id: 1, text: ' 리액트 소개2', checked: true, color : '#343a40' },
+      { id: 2, text: ' 리액트 소개3', checked: false, color : '#f03e3e' }
     ]
   }
 
@@ -26,13 +26,14 @@ class App extends Component {
   }
 
   handleCreate = () => {
-    const { input,todos } = this.state;
+    const { input, color, todos } = this.state;
     this.setState({
       input : '',
       todos : todos.concat({
         id : this.id++,
         text : input,
-        checked : false
+        checked : false,
+        color
       })
     });
   }
