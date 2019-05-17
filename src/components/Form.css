@@ -20,3 +20,7 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+.create-button:hover {
+  background-color: #5C2573;
+}
