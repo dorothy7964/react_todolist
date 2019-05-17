@@ -104,6 +104,7 @@ class App extends Component {
             onChange={handleChange}
             onCreate={handleCreate}
             onKeyPress={handleKeyPress}
+            color={color}
           />
       )}>
 
